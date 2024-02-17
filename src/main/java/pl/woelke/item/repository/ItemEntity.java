@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-@Table( name = "ITEM")
+@Table( name = "item")
 @Getter
 @Setter
 @ToString
@@ -29,7 +29,7 @@ public class ItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String index;
+    private String salesIndex;
     private String name;
     private String category;
     private String description;

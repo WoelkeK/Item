@@ -12,7 +12,7 @@ public class Mapper {
     public static ItemEntity mapItemToItemEntity(Item item) {
         log.debug("mapItemToItemEntity()");
         return ItemEntity.builder()
-                .index(item.getIndex())
+                .salesIndex(item.getSaleIndex())
                 .name(item.getName())
                 .category(item.getCategory())
                 .description(item.getDescription())
@@ -34,7 +34,7 @@ public class Mapper {
     public static Item mapItemEntityToItem(ItemEntity itemEntity) {
         log.debug("mapItemEntityToItem()");
         return Item.builder()
-                .index(itemEntity.getIndex())
+                .saleIndex(itemEntity.getSalesIndex())
                 .name(itemEntity.getName())
                 .category(itemEntity.getCategory())
                 .description(itemEntity.getDescription())

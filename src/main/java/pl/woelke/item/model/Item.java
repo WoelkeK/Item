@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class Item {
 
-    private String index;
+    private String saleIndex;
     private String name;
     private String category;
     private String description;

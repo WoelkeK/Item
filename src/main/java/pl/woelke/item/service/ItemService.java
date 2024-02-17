@@ -9,8 +9,6 @@ import pl.woelke.item.repository.ItemRepository;
 
 import java.util.List;
 
-
-
 /**
  * The ItemService class is responsible for managing items in the system.
  * Author: Krzysztof Woelke initial version 17.02.2024
@@ -19,7 +17,7 @@ import java.util.List;
 @Slf4j
 public class ItemService {
 
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
 
     public ItemService(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
@@ -30,9 +28,9 @@ public class ItemService {
         return Mapper.mapItemEntitiesToItems(itemRepository.findAll());
     }
 
-    public Item addItem() {
+    public Item addItem(Item item) {
         log.debug("addItem()");
-        return Mapper.mapItemEntityToItem(itemRepository.save(Mapper.mapItemToItemEntity(new Item())));
+        return Mapper.mapItemEntityToItem(itemRepository.save(Mapper.mapItemToItemEntity(item)));
     }
 
     public Item getItemById(Long id) throws ItemNotFoundException {
